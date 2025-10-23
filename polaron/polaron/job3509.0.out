@@ -1,0 +1,79 @@
+Running dynamics for 10 different qubit_targetz values:
+qubit_targetz values: [ 0.          5.55555556 11.11111111 16.66666667 22.22222222 27.77777778
+ 33.33333333 38.88888889 44.44444444 50.        ]
+============================================================
+
+Run 1/10: qubit_targetz = 0.00 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_172423.pkl
+✓ Successfully completed run 1
+  Saved to: None
+
+Run 2/10: qubit_targetz = 5.56 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_173433.pkl
+✓ Successfully completed run 2
+  Saved to: None
+
+Run 3/10: qubit_targetz = 11.11 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_174443.pkl
+✓ Successfully completed run 3
+  Saved to: None
+
+Run 4/10: qubit_targetz = 16.67 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_175453.pkl
+✓ Successfully completed run 4
+  Saved to: None
+
+Run 5/10: qubit_targetz = 22.22 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_180503.pkl
+✓ Successfully completed run 5
+  Saved to: None
+
+Run 6/10: qubit_targetz = 27.78 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_181513.pkl
+✓ Successfully completed run 6
+  Saved to: None
+
+Run 7/10: qubit_targetz = 33.33 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_182523.pkl
+✓ Successfully completed run 7
+  Saved to: None
+
+Run 8/10: qubit_targetz = 38.89 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_183532.pkl
+✓ Successfully completed run 8
+  Saved to: None
+
+Run 9/10: qubit_targetz = 44.44 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_184542.pkl
+✓ Successfully completed run 9
+  Saved to: None
+
+Run 10/10: qubit_targetz = 50.00 MHz
+----------------------------------------
+Dynamics saved to: ./saved_dynamics/dynamics_20251022_185552.pkl
+✓ Successfully completed run 10
+  Saved to: None
+
+============================================================
+All runs completed!
+
+Loading the most recent dynamics file for verification...
+Dynamics loaded from: ./saved_dynamics/dynamics_20251022_185552.pkl
+Timestamp: 20251022_185552
+Description: Dynamics for N=10, κ=4.3MHz
+Parameters: {'N': 10, 'final_time__mus': 20, 'time_steps': 1000, 'input_power': 0, 'rabi_freq': 125663706.14359173, 'eff_coupling': 25132741.228718344, 'qubit_targetz': 50.0, 'cavity_diss_rate': 27017696.82087222, 'norm': 25132741.228718344, 'initial_state_qubit': Quantum object: dims=[[2], [1]], shape=(2, 1), type='ket', dtype=Dense
+Qobj data =
+[[-0.70710664]
+ [ 0.70710692]]}
+✓ Successfully loaded latest dynamics
+  qubit_targetz: 50.0 MHz
+  Number of time steps: 1000

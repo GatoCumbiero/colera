@@ -1,0 +1,206 @@
+
+============================================================
+PROCESSING DIRECTORY: ./diss_rate_results
+============================================================
+Processing all files in: ./diss_rate_results
+============================================================
+Found 10 result files:
+  rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.npz
+  rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.npz
+  rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.npz
+  rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.npz
+  rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.npz
+  rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.pkl
+  rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.pkl
+  rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.pkl
+  rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.pkl
+  rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.pkl
+
+Processing: rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.npz
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_1.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.npz
+
+Processing: rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.npz
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_4.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.npz
+
+Processing: rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.npz
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_1.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.npz
+
+Processing: rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.npz
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.npz
+
+Processing: rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.npz
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_0.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.npz
+
+Processing: rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.pkl
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_1.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_1.3MHz_2025-10-20T18-13-57.pkl
+
+Processing: rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.pkl
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_4.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_4.3MHz_2025-10-20T18-14-26.pkl
+
+Processing: rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.pkl
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_1.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_1.3MHz_2025-10-20T18-20-41.pkl
+
+Processing: rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.pkl
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_2.3MHz_2025-10-20T18-20-44.pkl
+
+Processing: rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.pkl
+----------------------------------------
+Loaded results from: ./diss_rate_results/rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_0.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_kappa_0.3MHz_2025-10-20T19-32-05.pkl
+
+============================================================
+Completed processing 10 files
+
+============================================================
+PROCESSING DIRECTORY: ./rabi_freq_results
+============================================================
+Processing all files in: ./rabi_freq_results
+============================================================
+Found 4 result files:
+  rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.npz
+  rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.npz
+  rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.pkl
+  rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.pkl
+
+Processing: rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.npz
+----------------------------------------
+Loaded results from: ./rabi_freq_results/rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_4.3MHz_omega_18.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.npz
+
+Processing: rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.npz
+----------------------------------------
+Loaded results from: ./rabi_freq_results/rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_4.3MHz_omega_27.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.npz
+
+Processing: rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.pkl
+----------------------------------------
+Loaded results from: ./rabi_freq_results/rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_4.3MHz_omega_18.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_omega_18.0MHz_2025-10-20T23-20-44.pkl
+
+Processing: rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.pkl
+----------------------------------------
+Loaded results from: ./rabi_freq_results/rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_4.3MHz_omega_27.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: rabi_sweep_omega_27.0MHz_2025-10-21T02-50-49.pkl
+
+============================================================
+Completed processing 4 files
+
+============================================================
+PROCESSING DIRECTORY: ./eff_coupling_results
+============================================================
+Processing all files in: ./eff_coupling_results
+============================================================
+Found 8 result files:
+  coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.npz
+  coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.npz
+  coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.npz
+  coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.npz
+  coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.pkl
+  coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.pkl
+  coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.pkl
+  coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.pkl
+
+Processing: coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.npz
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.npz
+
+Processing: coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.npz
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_1.5MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.npz
+
+Processing: coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.npz
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_2.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.npz
+
+Processing: coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.npz
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.npz
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_2.5MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.npz
+
+Processing: coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.pkl
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_1.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_1.0MHz_2025-10-20T21-23-39.pkl
+
+Processing: coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.pkl
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_1.5MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_1.5MHz_2025-10-20T21-26-57.pkl
+
+Processing: coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.pkl
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_2.0MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_2.0MHz_2025-10-20T21-37-07.pkl
+
+Processing: coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.pkl
+----------------------------------------
+Loaded results from: ./eff_coupling_results/coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.pkl
+Plots saved to: ./heatmap_plots/heatmaps_kappa_2.3MHz_omega_9.0MHz_g_2.5MHz.png
+Plot created but not displayed (show_plot=False)
+Successfully processed: coupling_sweep_g_2.5MHz_2025-10-20T22-28-28.pkl
+
+============================================================
+Completed processing 8 files
