@@ -434,8 +434,8 @@ def tdep_Z_operators_polaron(parameters, sz_matrix, sm_matrix, t):
 
     return [u1]
 
-def calculate_parameters_polaron_shift(parameters):
-
+def calculate_cavity_drive_amplitude_normal_shift(parameters):
+    """Calculate the cavity drive amplitude out of the normal cavity Ansatz, is just to get a realistic value for this parameter."""
     N = parameters['N']
     cavity_diss_rate = parameters['cavity_diss_rate']
     input_power = parameters['input_power']
@@ -451,46 +451,59 @@ def calculate_parameters_polaron_shift(parameters):
     #the Polaron shift and some initial state for the cavity.
 
     cavity_photon_number = 10**(input_power/10)
-    qubit_detuning = qubit_targetz - eff_coupling*(2*cavity_photon_number + 1) 
-    qubit_detuning_lamb_shift = qubit_detuning + eff_coupling*(2*cavity_photon_number + 1)
-    diag_qubit_freq_normal_shift = (qubit_detuning_lamb_shift**2 + rabi_freq**2)**.5
+    diag_qubit_freq_normal_shift = (qubit_targetz**2 + rabi_freq**2)**.5
     if target_state == 'up':
         cavity_detuning_normal_shift = diag_qubit_freq_normal_shift
     elif target_state == 'down':
         cavity_detuning_normal_shift = -diag_qubit_freq_normal_shift
 
     cavity_drive_amplitude = np.real((cavity_photon_number * (cavity_detuning_normal_shift**2 + .25*cavity_diss_rate**2))**.5)
-    cavity_field = cavity_drive_amplitude/(-cavity_detuning_normal_shift + .5j*cavity_diss_rate)
-    psi0_cavity = coherent(N,cavity_field)
 
     parameters['cavity_drive_amplitude'] = cavity_drive_amplitude
+
+    return parameters
+
+def get_initial_cavity_state_normal_shift(parameters):
+    N = parameters['N']
+    cavity_diss_rate = parameters['cavity_diss_rate']
+    input_power = parameters['input_power']
+    rabi_freq = parameters['rabi_freq']
+    eff_coupling = parameters['eff_coupling']
+    qubit_targetz = parameters['qubit_targetz']
+    norm = parameters['norm']
+    final_time__mus = parameters['final_time__mus'] 
+    time_steps = parameters['time_steps']
+    target_state = parameters['target_state']
+    cavity_drive_amplitude = parameters['cavity_drive_amplitude']
+
+    diag_qubit_freq_normal_shift = (qubit_targetz**2 + rabi_freq**2)**.5
+    if target_state == 'up':
+        cavity_detuning_normal_shift = diag_qubit_freq_normal_shift
+    elif target_state == 'down':
+        cavity_detuning_normal_shift = -diag_qubit_freq_normal_shift
+
+    cavity_field = cavity_drive_amplitude/(-cavity_detuning_normal_shift + .5j*cavity_diss_rate)
+    psi0_cavity = coherent(N,cavity_field)
     parameters['initial_state_cavity'] = psi0_cavity
 
-    #Use polaron shift to calculate the qubit detuning to achieve our target frequency and
-    #the cooling. Here we are making the assumption that the polaron shift is the best we can do.
+    return parameters
 
-    cavity_field_e = cavity_drive_amplitude/(-(cavity_detuning + eff_coupling) + .5j*cavity_diss_rate)
-    cavity_field_g = cavity_drive_amplitude/(-(cavity_detuning - eff_coupling) + .5j*cavity_diss_rate)
-    qubit_detuning = qubit_targetz - eff_coupling*(2*np.real(cavity_field_g*np.conj(cavity_field_e))+ 1)
+def get_initial_qubit_state(parameters):
+    N = parameters['N']
+    cavity_diss_rate = parameters['cavity_diss_rate']
+    input_power = parameters['input_power']
+    rabi_freq = parameters['rabi_freq']
+    eff_coupling = parameters['eff_coupling']
+    qubit_targetz = parameters['qubit_targetz']
+    norm = parameters['norm']
+    final_time__mus = parameters['final_time__mus'] 
+    time_steps = parameters['time_steps']
+    target_state = parameters['target_state']
+    cavity_drive_amplitude = parameters['cavity_drive_amplitude']
 
-    diag_qubit_freq = (qubit_detuning_lamb_shift**2 + rabi_freq**2)**.5
-    sz_anteil = qubit_detuning_lamb_shift/diag_qubit_freq
-    sx_anteil = rabi_freq/diag_qubit_freq
-    
-    if target_state == 'up':
-        cavity_detuning = diag_qubit_freq
-    elif target_state == 'down':
-        cavity_detuning = -diag_qubit_freq
-
-    parameters['qubit_detuning'] = qubit_detuning
-    parameters['cavity_detuning'] = cavity_detuning
-    parameters['diag_qubit_freq'] = diag_qubit_freq
-    parameters['sz_anteil'] = sz_anteil
-    parameters['sx_anteil'] = sx_anteil
 
     #calculate initial state of the qubit according to herr Polaron
-
-    H_qubit_target = .5*((qubit_detuning+eff_coupling*(2*np.real(cavity_field_g*np.conj(cavity_field_e))+ 1))*sigmaz() + rabi_freq*sigmax())
+    H_qubit_target = .5*((qubit_targetz)*sigmaz() + rabi_freq*sigmax())
     evalues_target_pol, estates_target_pol = H_qubit_target.eigenstates()
 
     if target_state == 'up':
@@ -499,6 +512,48 @@ def calculate_parameters_polaron_shift(parameters):
         initial_state_qubit = estates_target_pol[0]
 
     parameters['initial_state_qubit'] = initial_state_qubit
+
+    return parameters
+
+def calculate_parameters_polaron(parameters):
+
+    N = parameters['N']
+    cavity_diss_rate = parameters['cavity_diss_rate']
+    input_power = parameters['input_power']
+    rabi_freq = parameters['rabi_freq']
+    eff_coupling = parameters['eff_coupling']
+    qubit_targetz = parameters['qubit_targetz']
+    norm = parameters['norm']
+    final_time__mus = parameters['final_time__mus'] 
+    time_steps = parameters['time_steps']
+    target_state = parameters['target_state']
+    psi0_cavity = parameters['initial_state_cavity']
+    cavity_drive_amplitude = parameters['cavity_drive_amplitude']
+
+
+    #Use polaron shift to calculate the qubit detuning to achieve our target frequency and
+    #the cooling. Here we are making the assumption that the polaron shift is the best we can do.
+
+
+    diag_qubit_freq = (qubit_targetz**2 + rabi_freq**2)**.5
+
+    if target_state == 'up':
+        cavity_detuning = diag_qubit_freq
+    elif target_state == 'down':
+        cavity_detuning = -diag_qubit_freq
+
+    cavity_field_e = cavity_drive_amplitude/(-(cavity_detuning + eff_coupling) + .5j*cavity_diss_rate)
+    cavity_field_g = cavity_drive_amplitude/(-(cavity_detuning - eff_coupling) + .5j*cavity_diss_rate)
+    qubit_detuning = qubit_targetz - eff_coupling*(2*np.real(cavity_field_g*np.conj(cavity_field_e))+ 1)
+
+    sz_anteil = qubit_targetz/diag_qubit_freq
+    sx_anteil = rabi_freq/diag_qubit_freq
+
+    parameters['qubit_detuning'] = qubit_detuning
+    parameters['cavity_detuning'] = cavity_detuning
+    parameters['diag_qubit_freq'] = diag_qubit_freq
+    parameters['sz_anteil'] = sz_anteil
+    parameters['sx_anteil'] = sx_anteil
 
     return parameters
 
@@ -514,54 +569,27 @@ def calculate_parameters_normal_shift(parameters):
     final_time__mus = parameters['final_time__mus'] 
     time_steps = parameters['time_steps']
     target_state = parameters['target_state']
+    cavity_drive_amplitude = parameters['cavity_drive_amplitude']
 
-    #Use normal cavity Ansatz to calculate the drive_cavity_amplitude. It does not affect is just to get a number for 
-    #the Polaron shift and some initial state for the cavity.
-
-    cavity_photon_number = 10**(input_power/10)
-    qubit_detuning = qubit_targetz - eff_coupling*(2*cavity_photon_number + 1) 
-    qubit_detuning_lamb_shift = qubit_detuning + eff_coupling*(2*cavity_photon_number + 1)
-    cavity_detuning = (qubit_detuning_lamb_shift**2 + rabi_freq**2)**.5
-    cavity_drive_amplitude = np.real((cavity_photon_number * (cavity_detuning**2 + .25*cavity_diss_rate**2))**.5)
-    cavity_field = cavity_drive_amplitude/(-cavity_detuning + .5j*cavity_diss_rate)
-    psi0_cavity = coherent(N,cavity_field)
-
-    parameters['cavity_drive_amplitude'] = cavity_drive_amplitude
-    parameters['initial_state_cavity'] = psi0_cavity
-
-    #Use polaron shift to calculate the qubit detuning to achieve our target frequency and
-    #the cooling. Here we are making the assumption that the polaron shift is the best we can do.
-
-    cavity_field_e = cavity_drive_amplitude/(-(cavity_detuning + eff_coupling) + .5j*cavity_diss_rate)
-    cavity_field_g = cavity_drive_amplitude/(-(cavity_detuning - eff_coupling) + .5j*cavity_diss_rate)
-    qubit_detuning = qubit_targetz - eff_coupling*(2*np.real(cavity_field_g*np.conj(cavity_field_e))+ 1)
-
-    diag_qubit_freq = (qubit_detuning_lamb_shift**2 + rabi_freq**2)**.5
-    sz_anteil = qubit_detuning_lamb_shift/diag_qubit_freq
-    sx_anteil = rabi_freq/diag_qubit_freq
-    
+  
+    diag_qubit_freq = (qubit_targetz**2 + rabi_freq**2)**.5
     if target_state == 'up':
         cavity_detuning = diag_qubit_freq
     elif target_state == 'down':
         cavity_detuning = -diag_qubit_freq
 
+    cavity_field = cavity_drive_amplitude/(-cavity_detuning + .5j*cavity_diss_rate)
+    cavity_photon_number = np.abs(cavity_field)**2
+    qubit_detuning = qubit_targetz - eff_coupling*(2*cavity_photon_number + 1) 
+    
+    sz_anteil = qubit_targetz/diag_qubit_freq
+    sx_anteil = rabi_freq/diag_qubit_freq
+ 
     parameters['qubit_detuning'] = qubit_detuning
     parameters['cavity_detuning'] = cavity_detuning
     parameters['diag_qubit_freq'] = diag_qubit_freq
     parameters['sz_anteil'] = sz_anteil
     parameters['sx_anteil'] = sx_anteil
-
-    #calculate initial state of the qubit according to herr Polaron
-
-    H_qubit_target = .5*((qubit_detuning+eff_coupling*(2*np.real(cavity_field_g*np.conj(cavity_field_e))+ 1))*sigmaz() + rabi_freq*sigmax())
-    evalues_target_pol, estates_target_pol = H_qubit_target.eigenstates()
-
-    if target_state == 'up':
-        initial_state_qubit = estates_target_pol[1]
-    elif target_state == 'down':
-        initial_state_qubit = estates_target_pol[0]
-
-    parameters['initial_state_qubit'] = initial_state_qubit
 
     return parameters
 
